@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import db from "../server/configs/db.js";
 import dotenv from "dotenv";
+import connectCloudinary from "../server/configs/cloudinary.js";
 
 
 //routes import
@@ -17,6 +18,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 db();
+await connectCloudinary();
 
 
 const allowedOrigins= ["http://localhost:5173"];
